@@ -16,12 +16,11 @@ int main()
 
 	for (int i = start; i <= end; i++)
 	{
-		store[0] = i / 100;
-		store[1] = (i / 10) % 10;
-		store[2] = i % 10;
+		int hundreds = i / 100;
+		int tens = (i / 10) % 10;
+		int units = i % 10;
 
-		if ((store[0] == store[1] && store[0] != store[2] && store[1] != store[2]) ||
-			(store[1] == store[2] && store[1] != store[0] && store[2] != store[0]))
+		if ((units == tens && tens != hundreds) || (hundreds == tens && units != hundreds))
 		{
 			counter++;
 			cout << i << endl;
@@ -34,14 +33,6 @@ int main()
 
 //    
 //
-//for (int i = start; i <= end; i++)
-//{
-//	int hundreds = i / 100;
-//	int tens = (i / 10) % 10;
-//	int units = i % 10;
-//
-//	if ((units == tens && tens != hundreds) || (tens == hundreds && units != tens) || (units == hundreds && units != tens))
-//		counter++;
-//}
+
 
 
